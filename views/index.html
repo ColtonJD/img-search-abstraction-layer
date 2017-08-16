@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app = "imageSearchApp" class="text-center">
+  <head>
+    <title>Bing Image Search Abstraction Layer</title>
+    <meta name="Simple image search abstraction layer using Bing Search API and node-bing-api module" content="A cool thing made with Glitch">
+    <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
+  </head>
+  <body class="text-center">
+    <header>
+      <h1>
+        Bing image search Abstraction Layer
+      </h1>
+    </header>
+
+    <main class="text-center">
+      <div class="bold text-center">This API Key may be expired</div>
+      <div class="text-center">
+        Using: Angular, MongoDB, Node.JS, Express
+      </div>
+      <div class="text-center">Search Bing Images:</div>
+      <form ng-controller="searchCtrl">
+        Search Term:
+        <input type="text" maxlength="100" placeholder="Enter Term" ng-model="searchTerm">
+        Off Set:
+        <input type="number" placeholder="0" ng-model="offSet">
+        <a class="btn btn-primary" ng-href="/api/imagesearch/{{searchTerm}}?offset={{offSet}}">Submit</a><a class="btn btn-primary" ng-href="/api/previous">Previous Searches</a>
+      </form>
+    </main>
+    <!-- Your web-app is https, so your scripts need to be too -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="/client.js"></script>
+
+  </body>
+</html>
